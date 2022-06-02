@@ -1,0 +1,129 @@
+.phone {
+    background-image: url("../../public/login/phone.png");
+    background-size: 468.32px 634.15px;
+    align-self: center;
+    display: flex;
+    height: 581.15px;
+    background-repeat: no-repeat;
+    width: 428px;
+    flex-basis: 380.2px;
+}
+
+.phone-img {
+    position: relative;
+    &__item {
+        position: absolute;
+        top: 27px;
+        left: 158px;
+        border: 0 solid #000;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1.5s ease-in-out;
+    }
+    .active {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+.my-input {
+    display: flex;
+    align-items: center;
+    border: 0;
+    background-color: #fafafa !important;
+    border-radius: 5px;
+    border: 1px solid rgba(var(--ca6,219,219,219),1);
+    box-sizing: border-box;
+    -webkit-box-align: center;
+    flex-direction: row;
+    font-size: 14px;
+    position: relative;
+    width: 100%;
+    &__label {
+        display: flex;
+        // align-items: center;
+        justify-self: center;
+        flex: 1 0 0;
+        height: 36px;
+        margin: 0;
+        min-width: 0;
+        padding: 0;
+        position: relative;
+        &__span {
+            color: rgba(var(--f52,142,142,142),1);
+            font-size: 12px;
+            height: 36px;
+            position: absolute;
+            left: 8px;
+            line-height: 36px;
+            overflow: hidden;
+            pointer-events: none;
+            right: none;
+            text-overflow: ellipsis;
+            transform-origin: left;
+            transition: all .3s ease-in-out;
+            user-select: none;
+            white-space: nowrap;
+        }
+        & > .active{
+            transform: scale(0.83333) translateY(-12px);
+        }
+    }
+    &__input {
+        font-size: 12px;
+        padding: 11px 0 7px 8px !important;
+        background-color: #fafafa;
+        border: 0;
+        display: flex;
+        -webkit-box-flex: 1;
+        flex: 1 0 auto;
+        margin: 0;
+        margin: 0;
+        outline: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &__show-password {
+        position: absolute;
+        right: 8px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__btn {
+            border: 0;
+            font-weight: bold;
+            background-color: transparent;
+        }
+    }
+}
+
+.my-button {
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background-color: #0095f6 !important;
+    border-radius: 5px;
+    box-sizing: border-box;
+    -webkit-box-align: center;
+    flex-direction: row;
+    font-size: 14px;
+    position: relative;
+    width: 100%;
+    padding: 5px 9px;
+    cursor: pointer;
+    &:hover {
+        background-color: #0d7ac4 !important;
+    }
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    box-shadow: 0 0 0 30px #fafafa inset !important;
+}

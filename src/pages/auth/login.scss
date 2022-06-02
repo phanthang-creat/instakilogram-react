@@ -1,0 +1,126 @@
+.login {
+    width: 100%;
+}
+
+main {
+    // height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.article {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: center;
+    width: 100%;
+    max-width: 935px;
+    -webkit-box-pack: center;
+    -webkit-box-flex: 1;
+    margin: 10% auto 0;
+    &__right {
+        margin-left: 32px;
+        display: block;
+    }
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    // align-items: center;
+    border: 1px solid rgba(var(--ca6,219,219,219),1);
+    background-color: #fff;
+    border-radius: 1px;
+    margin: 0 0 10px;
+    padding: 10px 0;
+    width: 350px;
+}
+
+.logo-login {
+    margin-top: 36px;
+    margin-bottom: 12px;
+}
+
+.form__input {
+    margin-bottom: 10px;
+    // max-width: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 268px;
+    margin-top: 24px;
+    & > * {
+        margin: 0 40px 6px;
+    }
+}
+
+.my-button {
+    margin-top: 6px;
+    padding: 9px 0;
+}
+
+.forgot-password {
+    margin-top: 6px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    & > span {
+        color: #00376b;
+        font-size: 12px;
+        font-weight: normal;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+.form__footer {
+    -webkit-box-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(var(--ca6,219,219,219),1);
+    border-radius: 1px;
+    margin: 0 0 10px;
+    padding: 10px 0;
+    background-color: #fff;
+    & > div {
+        display: block;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        margin: 12px 0 11px;
+        & > span {
+            margin-right: 6px;
+        }
+        & > a {
+            color: #0095f6;
+            font-size: 12px;
+            font-weight: normal;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.err {
+    color: #ff0000;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0 0 10px;
+}
+
+@media all and (max-width: 865px) {
+    .article__left {
+        display: none;
+    }
+    
+}
+.success {
+    color: #3c763d;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0 0 10px;
+}
