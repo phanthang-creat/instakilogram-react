@@ -1,0 +1,126 @@
+.my-modal {
+    cursor: default;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.my-post-modal {
+    cursor: default;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.new-post {
+    .new-image {
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .new-image-default {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        .header {
+            position: absolute;
+            top: 0;
+            padding: 5px 0;
+            width: 100%;
+            color: rgb(0, 149, 246);
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+    .new-image-default-input {
+        display: block;
+        margin-top: 20px;
+        label {
+            background-color: rgb(0, 149, 246);
+            border: 1px solid transparent;
+            border-radius: 4px;
+            padding: 5px 9px;
+            font-size: 14px;
+            cursor: pointer;
+            display: block;
+            color: #fff;
+            font-weight: 600;
+        }
+    }
+    .bottom {
+        bottom: 15px;
+    }
+    
+    .new-image-input {
+        position: absolute;
+        z-index: 2;
+        background-color: rgba(26, 26, 26, .8);
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgb(0, 0, 0, 0.2);
+        cursor: pointer;
+        display: block;
+        right: 15px;
+    }
+    .new-image-delete {
+        // width: 12px;
+        // height: 12px;
+        top: 15px !important;
+    }
+    .list-image-item {
+        position: relative;
+    }
+    .new-image-input {
+        div{
+            padding: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }   
+    }
+    .caption-form {
+        width: 100%;
+        display: block;
+        .text-area {
+            width: 100%;
+            border: none;
+            outline: none; 
+            overflow: scroll;
+            height: 120px;
+            resize: none;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+    .share {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background-color: rgb(0, 149, 246);
+        border: 1px solid transparent;
+        border-radius: 4px;
+        padding: 5px 9px;
+        cursor: pointer;
+        display: block;
+        color: #fff;
+        &__btn {
+            border: none;
+            background-color: transparent;
+            outline: none;
+            cursor: pointer;
+            display: block;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+        }
+    }
+}

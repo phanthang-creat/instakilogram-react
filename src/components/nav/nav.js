@@ -1,12 +1,26 @@
-import React from "react";
+import React, {  } from "react";
 import { Container } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import NewPost from "../../pages/newPost/newPost";
+import { newPost } from "../../redux/reducer/newPost.reducer";
 import Logo from "../logo";
 import "./myNav.scss";
 import Search from "./search";
 
 const MyNav = () => {
     const [dropDownActive, setDropDownActive] = React.useState(false);
+
+    // const newPostHandler = useSelector((state) => state.newPost);
+
+    const dispatch = useDispatch();
+
+    // console.log(newPostHandler);
+
+    const newPostHandler = () => {
+        const action = newPost({ status: true });
+        dispatch(action);
+    }
 
     const toggleDropDown = () => {
         setDropDownActive(!dropDownActive);
@@ -62,7 +76,7 @@ const MyNav = () => {
                             </Link>
                         </div>
                         <div className="my-icon">
-                            <Link to="/">
+                            <button onClick={newPostHandler}>
                                 <svg
                                     aria-label="New Post"
                                     color="#262626"
@@ -103,7 +117,7 @@ const MyNav = () => {
                                         y2="17.455"
                                     ></line>
                                 </svg>
-                            </Link>
+                            </button>
                         </div>
                         <div className="my-icon">
                             <Link to="/explore">
@@ -234,6 +248,7 @@ const MyNav = () => {
                         </div>
                     </div>
                 </div>
+                <NewPost />
             </Container>
         </nav>
     );

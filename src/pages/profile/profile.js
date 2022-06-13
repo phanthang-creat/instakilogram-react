@@ -1,14 +1,18 @@
 import React, { useEffect } from "react";
 import { Spinner } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, Route, Routes } from "react-router-dom";
 import requestAPI from "../../controller/API/requestAPI";
+import { setProfile } from "../../redux/reducer/profile.reducer";
+import Default from "./post/defaul.post";
 import Post from "./post/post";
 
 import "./profile.scss";
 
 const Profile = () => {
     // window.location.reload();
+
+    const dispatch = useDispatch();
 
     const listLink = [
         {
@@ -42,17 +46,7 @@ const Profile = () => {
 
     const path = useSelector((state) => state.path.path);
 
-    // const [followed, setFollowed] = React.useState(false);
-
-    // const changeTab = (e) => {
-    //     let tab = e.target.getAttribute("tab");
-    //     setActiveTab(tab);
-    //     // setActiveTab(tab);
-    // }
-
-    // group.POST("/user/follow/:id", api.FollowHandler)
-	// group.POST("/user/un-follow/:id", api.UnFollowHandler)
-
+    //when click button follow
     const followHandler = (e) => {
         e.preventDefault();
         let data = requestAPI(`/api/user/follow/${user.id}`, {}, "POST");
@@ -93,22 +87,6 @@ const Profile = () => {
 
 
     useEffect(() => {
-        // window.location.reload();
-        // let path = window.location.pathname.split("/")[2] || "";
-        // switch (path) {
-        //     case "post":
-        //         setActiveTab("Post");
-        //         break;
-        //     case "saved":
-        //         setActiveTab("Saved");
-        //         break;
-        //     case "tagged":
-        //         setActiveTab("Tagged");
-        //         break;
-        //     default:
-        //         setActiveTab("Post");
-        //         break;
-        // }
 
         let uid = window.location.pathname.split("/")[1];
         let timer1 = null;
@@ -116,17 +94,17 @@ const Profile = () => {
         let following = requestAPI(`/api/user/following/${uid}`);
         timer1 = setTimeout(() => {
             user.then((res) => {
-                console.log(res[0]);
+                let action = setProfile(res[0]);
+                dispatch(action);
                 setUser(res[0]);
             });
             following.then((res) => {
-                console.log(res);
             });
         }, 700);
         return () => {
             clearTimeout(timer1);
         };
-    }, [path]);
+    }, [path, dispatch]);
 
     return (
         <div className="profile">
@@ -264,8 +242,8 @@ const Profile = () => {
                         </div>
                         <Routes>
                             <Route path="/" element={<Post />} />
-                            <Route path="/saved" element={<Post />} />
-                            <Route path="/tagged" element={<Post />} />
+                            <Route path="/saved" element={<Default />} />
+                            <Route path="/tagged" element={<Default />} />
                         </Routes>
                     </div>
                 </>

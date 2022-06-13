@@ -42,7 +42,7 @@ const requestAPI = async (url, form, method = "GET") => {
     return data;
 }
 async function RefreshToken() {
-    return fetch(`${process.env.REACT_APP_SERVER_URL}/api/token/refresh`, {
+    return fetch(`${process.env.REACT_APP_SERVER_URL}/token/refresh`, {
         method: "POST",
         headers: {
             "Authorization": `Bearer ${localStorage.getItem("refresh_token")}`,
